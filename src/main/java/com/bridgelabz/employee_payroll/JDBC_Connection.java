@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class JDBC_Connection {
 	public static Connection getConnection() {
-		String url = "jdbc:mysql://localhost:3306/employee_payroll_service";
+		String url = "jdbc:mysql://localhost:3306/payroll_service";
 		String user = "root";
 		String password = "system";
 		Connection connection = null;
@@ -21,14 +21,6 @@ public class JDBC_Connection {
 			System.out.println("Connection established");
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}finally {
-			if(connection != null) {
-				try {
-					connection.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
-			}
 		}
 		
 		return connection;
